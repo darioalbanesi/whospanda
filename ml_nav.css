@@ -1,0 +1,473 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500,600,700);
+
+/* Icon 
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+*/
+
+
+/*****************************************/
+/* Body THEME Def. */
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;	
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-size: 0.625em; /*10px reset  1.2em = 12px) */
+}
+body {
+	background-color: #E7F4FA;
+	color: #333;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 1.6em;
+	line-height: 160%;
+	font-weight: 300;
+	background-attachment: scroll;
+	background-image: url(../hg.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+a:link, a:visited, a:active {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #000;
+}
+a:focus { 
+    outline: none;
+}
+p {
+	padding: 0 0 0.8em 0;
+}
+ul {
+	margin: 0 0 1.2 0;
+	padding: 0px;
+}
+
+#mobileHeader{
+	height: 48px;
+}
+
+
+
+/**********************************************************/
+
+
+
+
+#mobileNav{
+}
+
+/* Common styles of menus */
+
+.dl-menuwrapper {
+	width: 100%;
+	/*max-width: 300px;*/
+	float: left;
+	position: relative;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-perspective-origin: 50% 200%;
+	-moz-perspective-origin: 50% 200%;
+	perspective-origin: 50% 200%;
+}
+
+.dl-menuwrapper a:hover{  /* allgemeine Hover Color */
+	color: #004B93;	
+}
+	
+
+.dl-menuwrapper:first-child {
+	margin-right: 100px;
+}
+
+.dl-menuwrapper button {
+	background:tranparent;
+	border: none;
+	width: 48px;
+	height: 50px;
+	text-indent: -900em;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+}
+
+.dl-menuwrapper button:hover,
+.dl-menuwrapper button.dl-active,
+.dl-menuwrapper ul {
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+
+.dl-menuwrapper button:after {  /*  nav icon  III   */
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 3px;
+	background: #004B93;
+	border-radius: 2px;
+	top: 15px;
+	left: 27%;
+	box-shadow: 
+		0 8px 0 #004B93, 
+		0 16px 0 #004B93;
+
+}
+
+
+.dl-menuwrapper ul {
+	padding: 0;
+	list-style: none;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.dl-menuwrapper li {
+	position: relative;
+}
+
+.dl-menuwrapper li a {    /*  Sub nav Buttons */
+	display: block;
+	position: relative;
+	font-size: 15px;
+	line-height: 18px;
+	outline: none;
+	background-color: transparent;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #cccccc;
+}
+
+.no-touch .dl-menuwrapper li a:hover {
+	background: rgba(255,248,213,0.1);
+}
+
+.dl-menuwrapper li.dl-back > a {     /*  Back Button Text */
+	padding-left: 35px;
+	background: rgba(0,0,0,0.0);
+	color: #004b93;
+	font-size: 13px;
+	opacity: 1.0;
+}
+
+.dl-menuwrapper li.dl-back:after,
+.dl-menuwrapper li > a:not(:only-child):after {
+	position: absolute;
+	top: 0;
+	line-height: 38px;
+	font-family: 'icomoon';
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	content: "\e000";
+}
+
+.dl-menuwrapper li.dl-back:after {
+	left: 8px;
+	color: rgba(221,221,221,1);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.dl-menuwrapper li > a:after {
+	right: 16px;
+	color: rgba(0,0,0,0.15);
+}
+
+dl-menuwrapper li.dl-back:after, .dl-menuwrapper li > a:not(:only-child):after {
+    content: "";
+    font-family: 'icomoon';
+    line-height: 35px;
+    position: absolute;
+    top: 0;
+}
+
+
+
+
+.dl-menuwrapper .dl-menu {
+	margin: 0 0 0 0;
+	position: absolute;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.dl-menuwrapper .dl-menu.dl-menu-toggle {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.dl-menuwrapper .dl-menu.dl-menuopen {
+	opacity: 1;
+	pointer-events: auto;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+/* Hide the inner submenus */
+.dl-menuwrapper li .dl-submenu {
+	display: none;
+}
+
+/* 
+When a submenu is openend, we will hide all li siblings.
+For that we give a class to the parent menu called "dl-subview".
+We also hide the submenu link. 
+The opened submenu will get the class "dl-subviewopen".
+All this is done for any sub-level being entered.
+*/
+.dl-menu.dl-subview li,
+.dl-menu.dl-subview li.dl-subviewopen > a,
+.dl-menu.dl-subview li.dl-subview > a {
+	display: none;
+}
+
+.dl-menu.dl-subview li.dl-subview,
+.dl-menu.dl-subview li.dl-subview .dl-submenu,
+.dl-menu.dl-subview li.dl-subviewopen,
+.dl-menu.dl-subview li.dl-subviewopen > .dl-submenu,
+.dl-menu.dl-subview li.dl-subviewopen > .dl-submenu > li {
+	display: block;
+}
+
+/* Dynamically added submenu outside of the menu context */
+.dl-menuwrapper > .dl-submenu {
+	position: absolute;
+	width: 100%;
+	top: 50px;
+	left: 0;
+	margin: 0;
+}
+
+.dl-subviewopen li a{  /* Submenü Nav Background */
+	background: linear-gradient(to top,  rgba(204,204,204,0.4) 0%, rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40ffffff', endColorstr='#90cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+
+/* Animation classes for moving out and in */
+
+
+.dl-menu.dl-animate-out-2 {
+	-webkit-animation: MenuAnimOut2 0.3s ease-in-out;
+	-moz-animation: MenuAnimOut2 0.3s ease-in-out;
+	animation: MenuAnimOut2 0.3s ease-in-out;
+}
+
+@-webkit-keyframes MenuAnimOut2 {
+	100% {
+		-webkit-transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes MenuAnimOut2 {
+	100% {
+		-moz-transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+@keyframes MenuAnimOut2 {
+	100% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+.dl-menu.dl-animate-in-2 {
+	-webkit-animation: MenuAnimIn2 0.3s ease-in-out;
+	-moz-animation: MenuAnimIn2 0.3s ease-in-out;
+	animation: MenuAnimIn2 0.3s ease-in-out;
+}
+
+@-webkit-keyframes MenuAnimIn2 {
+	0% {
+		-webkit-transform: translateX(-100%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes MenuAnimIn2 {
+	0% {
+		-moz-transform: translateX(-100%);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes MenuAnimIn2 {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+.dl-menuwrapper > .dl-submenu.dl-animate-in-2 {
+	-webkit-animation: SubMenuAnimIn2 0.3s ease-in-out;
+	-moz-animation: SubMenuAnimIn2 0.3s ease-in-out;
+	animation: SubMenuAnimIn2 0.3s ease-in-out;
+}
+
+@-webkit-keyframes SubMenuAnimIn2 {
+	0% {
+		-webkit-transform: translateX(100%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes SubMenuAnimIn2 {
+	0% {
+		-moz-transform: translateX(100%);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes SubMenuAnimIn2 {
+	0% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+.dl-menuwrapper > .dl-submenu.dl-animate-out-2 {
+	-webkit-animation: SubMenuAnimOut2 0.3s ease-in-out;
+	-moz-animation: SubMenuAnimOut2 0.3s ease-in-out;
+	animation: SubMenuAnimOut2 0.3s ease-in-out;
+}
+
+@-webkit-keyframes SubMenuAnimOut2 {
+	0% {
+		-webkit-transform: translateX(0%);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: translateX(100%);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes SubMenuAnimOut2 {
+	0% {
+		-moz-transform: translateX(0%);
+		opacity: 1;
+	}
+	100% {
+		-moz-transform: translateX(100%);
+		opacity: 0;
+	}
+}
+
+
+@keyframes SubMenuAnimOut2 {
+	0% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+}
+
+
+/* No JS Fallback */
+.no-js .dl-menuwrapper .dl-menu {
+	position: relative;
+	opacity: 1;
+	-webkit-transform: none;
+	-moz-transform: none;
+	transform: none;
+}
+
+.no-js .dl-menuwrapper li .dl-submenu {
+	display: block;
+}
+
+.no-js .dl-menuwrapper li.dl-back {
+	display: none;
+}
+
+.no-js .dl-menuwrapper li > a:not(:only-child) {
+	background: rgba(0,0,0,0.1);
+}
+
+.no-js .dl-menuwrapper li > a:not(:only-child):after {
+	content: '';
+}
+
+
+/********************  Colors for #mobileNav   ********************/
+
+
+#mobileNav .dl-menuwrapper button {
+	background: none;
+}
+
+#mobileNav .dl-menuwrapper button:hover,
+#mobileNav .dl-menuwrapper button.dl-active,
+#mobileNav .dl-menuwrapper ul {
+	background: none;
+}
+
+
+/**********************************************************/
